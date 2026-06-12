@@ -95,8 +95,6 @@ python3 email_checker.py alice@gmail.com bad@.com test@domain.123
 ---
 
 
----
-
 ### 3. Import into your own Python project
 
 The `check_email()` function is fully importable:
