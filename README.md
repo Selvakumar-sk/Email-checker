@@ -9,7 +9,7 @@ A lightweight, dependency-free Python utility for validating email addresses aga
 - ✅ No external libraries required — pure Python (`re`, `sys`)
 - ✅ Validates against RFC 5321 / 5322 rules
 - ✅ Returns detailed reasons for invalid emails
-- ✅ Supports both interactive input and command-line arguments
+- ✅ Supports command-line arguments input
 - ✅ Batch-test multiple emails at once
 - ✅ Clean, importable `check_email()` function for use in your own projects
 
@@ -94,35 +94,10 @@ python3 email_checker.py alice@gmail.com bad@.com test@domain.123
 
 ---
 
-### 3. Accept user input interactively
-
-Want to prompt the user to type an email? Add this snippet at the end of your script or in a new file:
-
-```python
-from email_checker import check_email
-
-email = input("Enter an email address: ").strip()
-result = check_email(email)
-
-if result["valid"]:
-    print(f"✅ '{email}' is a valid email address.")
-else:
-    print(f"❌ Invalid: {result['reason']}")
-```
-
-**Example session:**
-
-```
-Enter an email address: hello@world.com
-✅ 'hello@world.com' is a valid email address.
-
-Enter an email address: bad..email@.com
-❌ Invalid: Local part cannot contain consecutive dots
-```
 
 ---
 
-### 4. Import into your own Python project
+### 3. Import into your own Python project
 
 The `check_email()` function is fully importable:
 
@@ -188,7 +163,6 @@ email-validator/
 - [ ] Add disposable email domain detection
 - [ ] Build a simple CLI with `argparse` (flags, quiet mode, JSON output)
 - [ ] Export results to CSV
-- [ ] Add a Flask/FastAPI web endpoint wrapper
 
 ---
 
